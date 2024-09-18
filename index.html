@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		
+	</title>
+	<style type="text/css">
+		input{
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		
+		<h3>
+			Hola a la aplicación: {{ name_app }}  
+		</h3>
+
+		
+
+		<hr>
+	
+		<form @submit.prevent> 
+			<fieldset>
+				<label>
+					Email
+				</label>
+				<input type="email" v-model="email" placeholder="write here" name="">
+			</fieldset>
+
+			<fieldset>
+				<label>
+					Password
+				</label>
+
+					<input type="password" v-model="password" placeholder="write here" name="">
+				
+			</fieldset>
+
+			<button type="submit">
+				Access
+			</button>
+		</form>
+
+		<hr>
+
+		
+		
+
+		
+
+	</div>
+	
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script>
+		let email;
+		let password;
+
+		fetch(users.json)
+         .then(response => respose.text())
+         .then(response => response(response));
+
+		 console.log(this.email)
+		 console.log(this.password)
+
+	  const { createApp, ref } = Vue
+
+	  createApp({
+	    setup() {
+	      
+	    	const name_app = ref('Mi primer app') 
+	      	
+	      	
+
+		    return {
+			email,
+			password
+		    	//name_app,
+		    	//contador,
+		    	//username
+		    	
+		    }
+
+	    }
+	  }).mount('#main') 
+	</script>
+</body>
+</html>
